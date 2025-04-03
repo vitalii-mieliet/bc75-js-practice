@@ -68,3 +68,15 @@ const isDeveloper = false;
 //     return x + y
 // } 
 // console.log (summ(10, 5))
+
+// Оголоси функцію favoriteLanguage, яка буде повертати повідомлення
+// "I love <language>! I have been studying it for <years> years."
+// де language і years - це параметри, які очікує функція, мова (рядок)
+// і роки (число).
+// в результаті виклику функції в консолі має бути повідомлення:
+// console.log(favoriteLanguage("JavaScript", 5)); // "I love JavaScript! I have been studying it for 5 years."
+
+function favoriteLanguage(language, years) {
+    return `I love ${language}! I have been studying it for ${years} years.`
+}
+console.log(favoriteLanguage("JavaScript", 5));
