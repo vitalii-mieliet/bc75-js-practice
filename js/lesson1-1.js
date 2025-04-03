@@ -42,10 +42,29 @@ const isDeveloper = false;
 
 //  * Виведи на екран загальну кількість яблук та винограду. Різницю яблук та винограду.
 
-const apples = 47;
-const grapes = 135;
+// const apples = 47;
+// const grapes = 135;
 
-const sum = apples + grapes;
-const diff = grapes - apples;
-const result = `Виведи на екран загальну кількість ${sum} Різницю яблук та винограду ${diff}.`;
-console.log(result);
+// const sum = apples + grapes;
+// const diff = grapes - apples;
+// const result = `Виведи на екран загальну кількість ${sum} Різницю яблук та винограду ${diff}.`;
+// console.log(result);
+
+
+// const firstName = "Chelsy";
+// const lastName = "Emerald";
+// const fullName = firstName + " " + lastName;
+// const fullName = `${firstName} ${lastName}`
+// console.log(fullName);
+
+// const message = `How long is this string?`;
+// const messageLength = message.length;
+// const firstLetter = message[0];
+// const lastLetter = message[messageLength -1];
+// console.log(messageLength, firstLetter, lastLetter);
+
+// Напиши функцію, яка приямає 2 числа і повертає їх сумму
+// function summ(x, y) {
+//     return x + y
+// } 
+// console.log (summ(10, 5))
