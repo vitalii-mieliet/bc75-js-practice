@@ -25,3 +25,27 @@ const isDeveloper = false;
 // console.log(answer);
 // const confirmation = confirm("Are you adult?");
 // console.log(confirmation);
+
+// let test = "hello";
+// console.log(test);
+// test = "hello World";
+// console.log(test);
+
+// const x = 15;
+// const y = 10;
+// console.log(x + y);
+// console.log(x - y);
+// console.log(x * y);
+// console.log(x / y);
+// console.log(x ** y);
+// console.log(x % y);
+
+//  * Виведи на екран загальну кількість яблук та винограду. Різницю яблук та винограду.
+
+const apples = 47;
+const grapes = 135;
+
+const sum = apples + grapes;
+const diff = grapes - apples;
+const result = `Виведи на екран загальну кількість ${sum} Різницю яблук та винограду ${diff}.`;
+console.log(result);
