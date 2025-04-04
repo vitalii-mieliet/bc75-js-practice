@@ -98,3 +98,13 @@
 
 // const bmi = calcBMI("88.3kg", "1.75sm");
 // console.log(bmi); // 28.8
+
+// Наступна функція має повертати true, якщо параметр age більше чи дорівнює 18. В іншому випадку - false.
+
+function checkAge() {
+    const age = prompt("Чи є вам 18 років?")
+    return age >= 18; 
+
+}
+
+console.log(checkAge());
