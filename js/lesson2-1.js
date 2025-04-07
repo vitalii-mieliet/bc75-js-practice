@@ -39,7 +39,7 @@ const daysUntilDeadline = 5;
 // if (daysUntilDeadline === 0) {
 //     alert("Today")
 // }
-// else if(daysUntilDeadline === 1) { 
+// else if(daysUntilDeadline === 1) {
 //     alert("Tomorrow")
 // }
 // else if (daysUntilDeadline === 2) {
@@ -49,23 +49,112 @@ const daysUntilDeadline = 5;
 //     alert ("Date in the future")
 // }
 
-let result = ""
-switch (daysUntilDeadline) {
-    case 0:
-        result = "Today";
-        // alert("Today");
-        break;
-    case 1:
-        result = "Tomorrow";
-        // alert("Tomorrow");
-        break;
-    case 2:
-        result = "Overmorrow";
-        // alert("Overmorrow");
-        break;
+//   Виконай рефакторинг коду попередньої задачі використовуючи switch.
+
+// let result = ""
+// switch (daysUntilDeadline) {
+//     case 0:
+//         result = "Today";
+//         // alert("Today");
+//         break;
+//     case 1:
+//         result = "Tomorrow";
+//         // alert("Tomorrow");
+//         break;
+//     case 2:
+//         result = "Overmorrow";
+//         // alert("Overmorrow");
+//         break;
     
-    default:
-        result = "Date in the future";
-        // alert("Date in the future");
-}
-alert(result);
+//     default:
+//         result = "Date in the future";
+//         // alert("Date in the future");
+// }
+// alert(result);
+
+
+//  Напиши скрипт вибору опції доставки товару.
+//  Опція зберігається у змінній option: 1 - самовивіз, 2 - курʼєр, 3 - пошта (запитуй у користувача через prompt)
+//  У змінну message запишіть повідомлення залежно від опції.
+//  - 'Ви можете забрати товар завтра з 12:00 в нашому офісі'
+//  - 'Курʼєр доставить замовлення завтра з 9:00 до 18:00'
+//  - 'Посилка буде відправлена сьогодні'
+//  - 'Вам зателефонує менеджер'
+
+// function deliveryProduct() {
+//     const option = +prompt("Оберіть тип доставки");
+//     switch (option) {
+//         case 1:
+//             return "Ви можете забрати товар завтра з 12:00 в нашому офісі";
+//         case 2:
+//             return "Курʼєр доставить замовлення завтра з 9:00 до 18:00";
+//         case 3:
+//             return "Посилка буде відправлена сьогодні";
+//         default:
+//             return "Вам зателефонує менеджер";
+//     }
+// }
+
+// console.log(deliveryProduct());
+
+
+
+// Логічне І повертає значення останнього операнда, якщо всі операнди правдиві,
+// або значення першого хибного операнда, що зустрівся
+// console.log(5 && 4); //4
+// console.log(5 && 0); //0
+// console.log(false && 0); //false
+// console.log(5 && "mango"); //"mango"
+// console.log(0 && "mango"); //0
+
+
+// Логічне АБО повертає значення останнього операнда, якщо всі операнди хибні,
+// або значення першого правдивого операнда, що зустрівся
+// console.log(false || 5);  //5
+// console.log(5 || 0);  //5
+// console.log(5 || 10);  //5
+// console.log(false || null); //null
+// console.log(true || null); //true
+
+
+// Логічне НІ приводить операнд до логічного значення і заміняє його на протилежне
+// console.log(!5); //false
+// console.log(!false); // true
+
+
+// console.log(true && 3); //3
+// console.log(false && 3); //false
+// console.log(true && 4 && "kiwi");  //"kiwi"
+// console.log(true && 0 && "kiwi"); //0
+// console.log(true || 3);  //true
+// console.log(true || 3 || 4); //true
+// console.log(true || false || 7); //true
+// console.log(null || 2 || undefined); //2
+// console.log((1 && null && 2) > 0); // false
+// console.log(null || (2 && 3) || 4); //3
+
+
+//   Напиши скрипт перевірки підписки користувача при доступі до контента
+//   - Є три типа підписки: free, pro і vip.
+//   - Отримати доступ можуть тільки користувачі pro і vip
+
+// const sub = "free";
+// const canAccessContent = sub === "pro" || sub === "vip";
+// console.log("Чи є доступ до контенту? ", canAccessContent);
+
+
+
+//   Напиши скрипт, який перевіряє можливість відкрити чат з користувачем.
+//   Для цього, користувач має бути:
+//   - другом
+//   - онлайн
+//   - без режима не турбувати
+
+// const isOnline = true;
+// const isFriend = true;
+// const isDnd = false;
+
+// const canOpenChat = isOnline && isFriend && !isDnd;
+// console.log("Можна відкрити чат? ", canOpenChat);
+
+
