@@ -34,7 +34,7 @@
 //   Якщо до дедлайну 2 дні - виведи рядок "Overmorrow"
 //   Якщо до дедлайну 3+ днів - виведи рядок "Date in the future"
 
-const daysUntilDeadline = 5;
+// const daysUntilDeadline = 5;
 
 // if (daysUntilDeadline === 0) {
 //     alert("Today")
@@ -158,3 +158,39 @@ const daysUntilDeadline = 5;
 // console.log("Можна відкрити чат? ", canOpenChat);
 
 
+
+
+
+
+// Напиши код, який буде питати
+// логін за допомогою prompt и логіровати результат
+// в консоль браузера
+
+// Якщо користувач вводить "admin",
+// то prompt запрашує пароль.
+// Якщо нічого не ввели чи нажали Cancel
+// вивести в alert рядок "Cancel!"
+// В противному випадку вивести рядок "Who are you?!"
+// Пароль перевіряти так:
+// Якщо введен пароль "123456",
+// то вивести рядок "Welcome, boss!"
+// в іншому випадку виводити рядок "Wrong password!"
+const login=prompt("enter login")
+console.log(login)
+if (login=== "admin" ){
+    const password=prompt("enter password")
+    if (password==="123456" ){
+        alert("Welcome, boss!")
+        
+    }
+    else {
+        alert("Wrong password!")
+    }
+
+}
+else if (login===""|| login===null){
+    alert("Cancel!")
+}
+else {
+    alert("Who are you?!")
+}
