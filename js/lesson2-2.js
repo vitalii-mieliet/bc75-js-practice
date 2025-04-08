@@ -37,3 +37,47 @@
 //   return url;
 // }
 // console.log(checkUrl(url));
+
+// Запроси в користувача повідомлення через prompt.
+// Якщо повідомлення містить:
+// слово "hello" або "hi" → alert("Greeting detected")
+// слово "bye" або "goodbye" → alert("Farewell detected")
+// Якщо нічого з вищезгаданого — alert("Standard message")
+// Якщо нічого не введено або натиснуто Cancel — alert("No message entered.")
+
+// let message = prompt('Enter your message');
+// if (!message) {
+//   alert('No message entered');
+// } else {
+//   message = message.toLowerCase();
+//   if (message.includes('hello') || message.includes('hi')) {
+//     alert('Greeting detected');
+//   } else if (message.includes('bye') || message.includes('goodbye')) {
+//     alert('Farewell detected');
+//   } else {
+//     alert('standart message');
+//   }
+// }
+
+// console.log('before FOR');
+
+// for (let i = 1; i <= 10; i += 1) {
+//   console.log(i);
+// }
+
+// console.log('After FOR');
+
+// for (let i = 10; i >= 1; i -= 1) {
+//   console.log(i);
+// }
+// let a = 5;
+// // console.log(++a);
+// // console.log(a++);
+
+// let b = 10;
+// // console.log(--b);
+// console.log(b--);
+
+let a = 1;
+let b = a++ + ++a; //= (1+3)
+console.log(b);
