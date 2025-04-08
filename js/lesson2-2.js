@@ -78,6 +78,64 @@
 // // console.log(--b);
 // console.log(b--);
 
-let a = 1;
-let b = a++ + ++a; //= (1+3)
-console.log(b);
+// let a = 1;
+// let b = a++ + ++a; //= (1+3)
+// console.log(b);
+
+// Використай цикл while, щоб вивести в console всі числа від 0 до 10 включно.
+
+// let number = 0;
+// while (number <= 10) {
+//   console.log(number);
+//   number++;
+// }
+
+// Використай цикл do..while, щоб вивести в console числа від 5 до 1 включно
+
+// let number = 0;
+// do {
+//   console.log(number);
+//   number--;
+// } while (number >= 1);
+
+// Напиши цикл for, який виводить у консоль браузера
+//  числа за зростанням від a до b, але тільки якщо число кратне 5.
+
+// const a = 3;
+// const b = 54;
+
+// for (let i = a; i <= b; i++) {
+//   if (i % 7 === 0) {
+//     console.log(i);
+//   }
+// }
+
+// Напишіть функцію getNumbers(min, max), що приймає 2 параметри -
+// мінімальне і максимальне число відповідно.
+// Напишіть цикл всередині функції, який виводить у консоль
+// всі числа від max до min за спаданням.
+// Окрім цього, підрахуйте суму всіх парних чисел в цьому циклі
+// і поверніть її з функції.
+
+// function getNumbers(max, min) {
+//   let sum = 0;
+//   for (let i = max; i >= min; i--) {
+//     if (i % 2 === 0) {
+//       sum += i;
+//     }
+//     console.log(i);
+//   }
+//   return sum;
+// }
+// console.log(getNumbers(124, 23));
+
+// Напишіть функцію, яка перевертатиме рядок у зворотньому порядку
+
+// function getStrings(string) {
+//   let reverseString = "";
+//   for (let i = string.length - 1; i >= 0; i--) {
+//     reverseString += string[i];
+//   }
+//   return reverseString;
+// }
+// console.log(getStrings("Hello World"));
