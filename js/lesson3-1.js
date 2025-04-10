@@ -140,3 +140,51 @@
 // for (let i = 0; i < namesArray.length; i++) {
 //   console.log(`${namesArray[i]} - ${phonesArray[i]}`);
 // }
+
+/**
+ * Напиши скрипт, який підраховує суму всіх парних чисел у масиві.
+ */
+
+// const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 14];
+
+// let totalSum = 0;
+// for (const number of numbers) {
+//     if (number % 2 === 0) {
+//         totalSum += number 
+//     } 
+// }
+// console.log(totalSum);
+
+
+/**
+ * Напиши скрипт, який виводить у консоль усі слова рядка
+ * крім першого і останнього. Результуючий рядок не повинен починатися
+ * або закінчуватися символ пробілу.
+ * Скрипт повинен працювати для будь-якого рядка.
+ */
+
+// const string = "Welcome to the wonderful future";
+
+// function showWords(words) {
+//     const trimWords = words.trim().split(' ').slice(1, -1);
+//     for (const word of trimWords) {
+// console.log(word);
+//     }
+// }
+// showWords(string)
+
+
+/**
+ * Напиши скрипт пошуку найменшого числа у масиві. Код повинен працювати
+ * для будь-якого масиву чисел. Використовуй цикл для розв'язання задачі.
+ */
+
+const values = [2, 17, 94, 100, 23, 37];
+let minNumber = values[0];
+
+for (const value of values) {
+    if (minNumber > value) {
+        minNumber = value;
+    }
+}
+console.log(minNumber);
