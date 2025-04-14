@@ -97,7 +97,6 @@
 // console.log(calcTotalPrice(fruits, "Банан"));
 // console.log(calcTotalPrice(fruits, "Яблуко"));
 
-
 // Напиши функцію, яка приймає масив обʼєктів - список покупок, підраховує загальну вартість
 // і повертає повідомлення у форматі "Сума вашого замовлення = <total>".
 // Якщо функція отримує пустий масив - поверни повідомлення "Ваша корзину пуста"
@@ -112,7 +111,7 @@
 //     if (array.length === 0) {
 // return "Ваша корзинa пуста"
 //     }
-        
+
 //     let price = 0
 //     for (const product of array) {
 //         price += product.price * product.quantity;
@@ -123,35 +122,56 @@
 // console.log(totalPrice(cart))
 // console.log(totalPrice([]))
 
-
-
 // Побудуй обʼєкт із масиву: Створи новий об’єкт, де ключ — це id, а значення — name.
 
+// const users = [
+//   { id: 1, name: "Anna" },
+//   { id: 2, name: "Ivan" },
+//   { id: 3, name: "Oleh" },
+// ];
 
-const users = [
-  { id: 1, name: "Anna" },
-  { id: 2, name: "Ivan" },
-  { id: 3, name: "Oleh" },
-];
+// const userObj = {}
 
-const userObj = {}
+// for (const user of users) {
+//     const key = user.id
+//     const value = user.name
+// userObj[key] = value
 
-
-for (const user of users) {
-    const key = user.id
-    const value = user.name
-userObj[key] = value
-
-   
-}
- console.log(userObj)
-
-
-
+// }
+//  console.log(userObj)
 
 // //  Результат:
 // // {
 // //   1: 'Anna',
 // //   2: 'Ivan',
 // //   3: 'Oleh'
+// // }
+
+// Побудуй обʼєкт зі статистикою кількостей: Створи об’єкт, де ключ — назва товару, а значення — загальна кількість.
+
+// const purchases = [
+//   { name: "Milk", quantity: 2 },
+//   { name: "Bread", quantity: 1 },
+//   { name: "Bread", quantity: 3 },
+//   { name: "Milk", quantity: 3 },
+//   { name: "Butter", quantity: 1 },
+// ];
+
+// const statsObj = {};
+// for (const element of purchases) {
+//   const key = element.name;
+//   const value = element.quantity;
+//   if (statsObj[key]) {
+//     statsObj[key] += value;
+//   } else {
+//     statsObj[key] = value;
+//   }
+//   console.log(statsObj);
+// }
+
+// // ➡️ Результат:
+// // {
+// //   Milk: 5,
+// //   Bread: 4,
+// //   Butter: 1
 // // }
