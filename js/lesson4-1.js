@@ -96,3 +96,62 @@
 
 // console.log(calcTotalPrice(fruits, "Банан"));
 // console.log(calcTotalPrice(fruits, "Яблуко"));
+
+
+// Напиши функцію, яка приймає масив обʼєктів - список покупок, підраховує загальну вартість
+// і повертає повідомлення у форматі "Сума вашого замовлення = <total>".
+// Якщо функція отримує пустий масив - поверни повідомлення "Ваша корзину пуста"
+
+// const cart = [
+//   { name: "Milk", price: 25, quantity: 2 },
+//   { name: "Bread", price: 18, quantity: 1 },
+//   { name: "Butter", price: 40, quantity: 3 },
+// ];
+
+// function totalPrice(array) {
+//     if (array.length === 0) {
+// return "Ваша корзинa пуста"
+//     }
+        
+//     let price = 0
+//     for (const product of array) {
+//         price += product.price * product.quantity;
+// }
+// return `Сума вашого замовлення = ${price}`
+// }
+
+// console.log(totalPrice(cart))
+// console.log(totalPrice([]))
+
+
+
+// Побудуй обʼєкт із масиву: Створи новий об’єкт, де ключ — це id, а значення — name.
+
+
+const users = [
+  { id: 1, name: "Anna" },
+  { id: 2, name: "Ivan" },
+  { id: 3, name: "Oleh" },
+];
+
+const userObj = {}
+
+
+for (const user of users) {
+    const key = user.id
+    const value = user.name
+userObj[key] = value
+
+   
+}
+ console.log(userObj)
+
+
+
+
+// //  Результат:
+// // {
+// //   1: 'Anna',
+// //   2: 'Ivan',
+// //   3: 'Oleh'
+// // }
