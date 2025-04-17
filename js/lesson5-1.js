@@ -91,3 +91,118 @@
 // console.log(showName("Oleg"));
 
 // =============================================
+
+//? ForEach нічого не повертає, просто перебирає
+
+// const numbers = [1, 4, 5, 6, 7, 9];
+
+// numbers.forEach((el, index, array) => {
+//   console.log(el);
+//   console.log(index);
+//   console.log(array);
+// });
+
+//------------------------------------------------------------
+//  * Виконайте рефакторинг коду за допомогою методу forEach та стрілочні функції.
+
+// function logItems(items) {
+//     for (let i = 0; i < items.length; i += 1) {
+//       console.log(`${i + 1} - ${items[i]}`);
+//     }
+//   }
+
+// const logItems = (items) => {
+//   items.forEach((el, i) => {
+//     console.log(`${i + 1} - ${el}`);
+//   });
+// };
+
+// logItems(["Mango", "Poly", "Ajax"]);
+// console.log("");
+// logItems(["🍎", "🍇", "🍑", "🍌", "🍋"]);
+
+//------------------------------------------------------------
+
+/**
+ * Виконайте рефакторинг коду за допомогою методу forEach та стрілочні функції.
+ * Додай перевірку, що аргумент - це число
+ */
+// function calculateAverage(...args) {
+//     let total = 0;
+//     for (let i = 0; i < args.length; i++) {
+//       total += args[i];
+//     }
+//     return total / args.length;
+//   }
+
+// const calculateAverage = (...args) => {
+//   let total = 0;
+//   let counter = 0;
+//   args.forEach((el) => {
+//     if (typeof el === "number") {
+//       total += el;
+//       counter += 1;
+//     }
+//   });
+//   return total / counter || 0;
+// };
+
+// console.log(calculateAverage(1, 2, 3, 4)); // 2.5
+// console.log(calculateAverage(14, 8, 2)); // 8
+// console.log(calculateAverage(14, 8, "a", 2)); // 8
+// console.log(calculateAverage("qwe", false)); // 0
+
+//------------------------------------------------------------
+
+//? Map повертає масив тієї ж довжини: не змінює оригінал
+
+//  * Нехай функція getModels повертає масив моделей (поле model) всіх автомобілів.
+
+const allCars = [
+  { make: "Honda", model: "CR-V", amount: 14, price: 24045 },
+  { make: "Honda", model: "Accord", amount: 2, price: 22455 },
+  { make: "Mazda", model: "Mazda 6", amount: 8, price: 24195 },
+  { make: "Mazda", model: "CX-9", amount: 7, price: 31520 },
+  { make: "Toyota", model: "4Runner", amount: 19, price: 34210 },
+  { make: "Toyota", model: "Sequoia", amount: 16, price: 45560 },
+  { make: "Toyota", model: "Tacoma", amount: 4, price: 24320 },
+  { make: "Ford", model: "F-150", amount: 11, price: 27110 },
+  { make: "Ford", model: "Fusion", amount: 13, price: 22120 },
+  { make: "Ford", model: "Explorer", amount: 6, price: 31660 },
+];
+
+// const getModels = (array) => {
+//   return array.map((el) => {
+//     return el.model;
+//   });
+// };
+
+//! Це функція
+// const getModels = (array) => array.map((el) => el.model);
+
+// console.log(getModels(allCars));
+
+//! Це масив
+// const getModels = allCars.map((el) => el.model);
+
+// console.log(getModels);
+
+//! Це функція
+// const getRandomValues = (arr, prop) => {
+//   //   if (!arr[0][prop]) {
+//   //     return "No such property";
+//   //   }
+
+//   if (!arr[0].hasOwnProperty(prop)) {
+//     return "No such property";
+//   }
+//   return arr.map((el) => {
+//     return el[prop];
+//   });
+// };
+
+// console.log(getRandomValues(allCars, "amount"));
+
+// console.log(getRandomValues(allCars, "model"));
+
+//------------------------------------------------------------
