@@ -158,19 +158,6 @@
 
 //  * Нехай функція getModels повертає масив моделей (поле model) всіх автомобілів.
 
-const allCars = [
-  { make: "Honda", model: "CR-V", amount: 14, price: 24045 },
-  { make: "Honda", model: "Accord", amount: 2, price: 22455 },
-  { make: "Mazda", model: "Mazda 6", amount: 8, price: 24195 },
-  { make: "Mazda", model: "CX-9", amount: 7, price: 31520 },
-  { make: "Toyota", model: "4Runner", amount: 19, price: 34210 },
-  { make: "Toyota", model: "Sequoia", amount: 16, price: 45560 },
-  { make: "Toyota", model: "Tacoma", amount: 4, price: 24320 },
-  { make: "Ford", model: "F-150", amount: 11, price: 27110 },
-  { make: "Ford", model: "Fusion", amount: 13, price: 22120 },
-  { make: "Ford", model: "Explorer", amount: 6, price: 31660 },
-];
-
 // const getModels = (array) => {
 //   return array.map((el) => {
 //     return el.model;
@@ -206,3 +193,89 @@ const allCars = [
 // console.log(getRandomValues(allCars, "model"));
 
 //------------------------------------------------------------
+
+/**
+ * Нехай функція makeCarsWithDiscount повертає новий масив об'єктів із змінним
+ * значенням властивості price залежно від переданої знижки.
+ */
+
+// const makeCarsWithDiscount = (array, discount) => {
+//   return array.map((el) => {
+//     return { ...el, price: el.price - el.price * discount };
+//   });
+// };
+
+// console.table(makeCarsWithDiscount(allCars, 0.2));
+// console.table(makeCarsWithDiscount(allCars, 0.4));
+// console.log([1, 2, 3, 4, 5].map(() => {}));
+
+const allCars = [
+  { make: "Honda", model: "CR-V", amount: 14, price: 24045 },
+  { make: "Honda", model: "Accord", amount: 2, price: 22455 },
+  { make: "Mazda", model: "Mazda 6", amount: 8, price: 24195 },
+  { make: "Mazda", model: "CX-9", amount: 7, price: 31520 },
+  { make: "Toyota", model: "4Runner", amount: 19, price: 34210 },
+  { make: "Toyota", model: "Sequoia", amount: 16, price: 45560 },
+  { make: "Toyota", model: "Tacoma", amount: 4, price: 24320 },
+  { make: "Ford", model: "F-150", amount: 11, price: 27110 },
+  { make: "Ford", model: "Fusion", amount: 13, price: 22120 },
+  { make: "Ford", model: "Explorer", amount: 6, price: 31660 },
+];
+
+const data = [
+  { id: "000", name: "Alex", gender: "male", likes: 5, tags: ["js", "nodejs"] },
+  {
+    id: "001",
+    name: "Kate",
+    gender: "female",
+    likes: 2,
+    tags: ["html", "css"],
+  },
+  {
+    id: "002",
+    name: "Maria",
+    gender: "female",
+    likes: 17,
+    tags: ["html", "js", "nodejs"],
+  },
+  {
+    id: "003",
+    name: "Borys",
+    gender: "male",
+    likes: 8,
+    tags: ["css", "react"],
+  },
+  {
+    id: "004",
+    name: "Jhon",
+    gender: "male",
+    likes: 0,
+    tags: ["js", "nodejs", "react"],
+  },
+  {
+    id: "005",
+    name: "Anna",
+    gender: "female",
+    likes: 0,
+    tags: ["js", "nodejs", "react"],
+  },
+  {
+    id: "006",
+    name: "Jhon",
+    gender: "male",
+    likes: 0,
+    tags: ["js", "nodejs", "react"],
+  },
+];
+
+console.log(
+  data.map((el) => {
+    return el.tags;
+  })
+);
+
+console.log(
+  data.flatMap((el) => {
+    return el.tags;
+  })
+);
