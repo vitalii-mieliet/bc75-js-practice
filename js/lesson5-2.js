@@ -44,7 +44,6 @@ const data = [
   },
 ];
 
-
 // Напишіть функцію getUsersByGender, яка повертає масив корристувачів тільки певного гендера
 
 // const getUsersByGender = (arr, gender) => arr.filter(item => item.gender === gender);
@@ -76,10 +75,61 @@ const data = [
 // Напиши функцію getNamesByGender, яка перебирає масив
 // обʼєктів і повертає масив імен користувачів конкретної статі
 
-const getNamesByGender = (arr, gender) => arr.reduce((names, item) => {
+const getNamesByGender = (arr, gender) =>
+  arr.reduce((names, item) => {
     if (item.gender === gender) {
-        names.push(item.name);
-    };
-    return names;    
-}, []);
+      names.push(item.name);
+    }
+    return names;
+  }, []);
 console.log(getNamesByGender(data, "male"));
+
+// !Чи у всіх корситувачів є тег JS
+
+// const isAllHaveJs = data.every((user) => user.tags.includes("js"));
+
+// console.log(isAllHaveJs);
+
+// const isUnliked = data.some((user) => user.likes < 5);
+
+// console.log(isUnliked);
+
+// const numbers = [99, 53, 2, 35, 100];
+// console.log(numbers.toSorted());
+// console.log(numbers.toSorted((a, b) => a - b));
+
+// const letters = ["b", "B", "a", "A"];
+// console.log("letters", letters.toSorted());
+// console.log(
+//   "letters",
+//   letters.toSorted((a, b) => a.localeCompare(b))
+// );
+
+// !Напишіть функцію sortedByName, яка сортує масив обʼєктів по імені користувача
+
+// const sortedByName = (arr) =>
+//   arr.toSorted((a, b) => a.name.localeCompare(b.name));
+
+// console.log(sortedByName(data));
+
+// Напишіть функцію getStatisticsOfTags(array), яка приймає масив
+// і повертає об'єкт статистики, який враховує скільки разів повторюється кожен тег
+// в усіх користувачів разом (не для кожного окремо)
+// має бути відповідь: {js: 5, nodejs: 5, html: 2, css: 2, react: 4}
+
+// const getStatisticsOfTags = (array) =>
+//   array
+//     .flatMap((user) => user.tags)
+//     .reduce((stats, tag) => {
+//       console.log(stats);
+//       console.log(tag, stats[tag]);
+//       if (stats[tag]) {
+//         stats[tag] += 1;
+//       } else {
+//         stats[tag] = 1;
+//       }
+
+//       return stats;
+//     }, {});
+
+// console.log(getStatisticsOfTags(data));
