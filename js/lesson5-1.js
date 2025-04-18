@@ -268,14 +268,36 @@ const data = [
   },
 ];
 
-console.log(
-  data.map((el) => {
-    return el.tags;
-  })
-);
+// console.log(
+//   data.map((el) => {
+//     return el.tags;
+//   })
+// );
 
-console.log(
-  data.flatMap((el) => {
-    return el.tags;
-  })
-);
+// console.log(
+//   data.flatMap((el) => {
+//     return el.tags;
+//   })
+// );
+
+// const comments = [
+// { user: "Anna", text: "This course is amazing" },
+//  { user: "Tom", text: "Really helpful and clear" },
+//  { user: "Lena", text: "Nice examples" },
+// ];
+
+// const words = comments.flatMap((comment) => {
+//   return comment.text.toLowerCase().split(" ");    
+// }) 
+// const sortedWords = words.toSorted();
+// console.log(words);
+// console.log(sortedWords);
+
+
+/// Функція expandNumbers(arr) — для кожного числа n повертає n копій цього числа.
+ 
+// const nums = [1, 3, 5];
+// const expandNumbers = arr => arr.flatMap((number) => {
+//   return Array(number).fill(number);
+// });
+// console.log(expandNumbers(nums)); // [1, 3, 3, 3, 5, 5, 5, 5, 5]
