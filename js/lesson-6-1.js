@@ -172,3 +172,41 @@ console.log(this); // суворий режим - undefind; не суворий 
 // loginOk() і loginFail()
 // ці методи виводять в консоль повідомлення у форматі
 // "<name> logged in" та "<name> failed to log in" відповідно// зроби виклик функції askPassword, прив'язавши в якості аргументів методи об'єкта
+
+
+// const array = [1, 2, 3, 4];
+// console.log(array);
+
+// Створи обʼєкт boss з властивостями name, status і sayHi, який виводитиме повідомлення "Привіт, <name>"
+// Створи обʼєкт worker, прототипом якого буде boss. У обʼєкта будуть власні властивості - name, position i salary
+
+const boss = {
+    name: "Vova",
+    status: "vip",
+    sayHi() {
+        console.log(`Привіт, ${this.name}`);
+    }
+}
+
+const worker = Object.create(boss);
+worker.name = "Tolya";
+worker.position = "worker";
+worker.salary = 1000;
+
+// console.log(worker);
+// console.log(worker.name);
+// console.log(worker.status);
+// console.log(worker.age);
+
+// worker.sayHi();
+// boss.sayHi();
+
+for (const key in worker) {
+    if (worker.hasOwnProperty(key)) {
+        console.log(`${key} \n\n`);
+    }
+}
+
+for (const key of Object.keys(worker)) {
+    console.log(key);
+}
