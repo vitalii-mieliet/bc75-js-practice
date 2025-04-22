@@ -80,63 +80,163 @@
 // Додай методи getNotes(), addNote(note), removeNote(noteText)
 // updatePriority(noteText, newPriority)
 
-class Notes {
-  static priority = {
-    high: "high",
-    middle: "middle",
-    low: "low",
-  };
-  constructor() {
-    this.items = [];
+// class Notes {
+//   static priority = {
+//     high: "high",
+//     middle: "middle",
+//     low: "low",
+//   };
+//   constructor() {
+//     this.items = [];
+//   }
+
+//   getNotes() {
+//     return this.items;
+//   }
+
+//   addNote(note) {
+//     this.items.push(note);
+//   }
+
+//   removeNote(noteText) {
+//     // this.items = this.items.filter((item) => item.text !== noteText);
+//     const index = this.items.findIndex((item) => item.text === noteText);
+//     if (index !== -1) {
+//       this.items.splice(index, 1);
+//     }
+//   }
+
+//   updatePriority(noteText, newPriority) {
+//     const item = this.items.find((item) => item.text === noteText);
+//     if (item) {
+//       item.priority = newPriority;
+//     }
+//   }
+// }
+
+// const notes = new Notes();
+
+// console.log(notes);
+
+// notes.addNote({
+//   text: "today",
+//   priority: Notes.priority.low,
+// });
+// notes.addNote({
+//   text: "tomorrow",
+//   priority: Notes.priority.middle,
+// });
+// notes.addNote({
+//   text: "next day",
+//   priority: Notes.priority.high,
+// });
+
+// console.table(notes.getNotes());
+
+// notes.removeNote("today");
+
+// console.table(notes.getNotes());
+
+// notes.updatePriority("tomorrow", Notes.priority.low);
+
+// console.table(notes.getNotes());
+
+//!========================================================
+// Створити клас Worker, у якого є властивості name і salary.
+// У класу Worker є метод getSalary, який повертає повідомлення
+// "Worker <name> has salary <salary> dollars"
+// Створити клас WorkerPosition, у якого є властивість position
+// і який успадковує клас Worker, додаючи метод getPosition
+// який повертає повідомлення "<name> works as <position>"
+
+class Worker {
+  constructor(name, salary) {
+    this.name = name;
+    this.salary = salary;
   }
 
-  getNotes() {
-    return this.items;
-  }
-
-  addNote(note) {
-    this.items.push(note);
-  }
-
-  removeNote(noteText) {
-    // this.items = this.items.filter((item) => item.text !== noteText);
-    const index = this.items.findIndex((item) => item.text === noteText);
-    if (index !== -1) {
-      this.items.splice(index, 1);
-    }
-  }
-
-  updatePriority(noteText, newPriority) {
-    const item = this.items.find((item) => item.text === noteText);
-    if (item) {
-      item.priority = newPriority;
-    }
+  getSalary() {
+    return `Worker ${this.name} has salary ${this.salary} dollars`;
   }
 }
 
-const notes = new Notes();
+class WorkerPosition extends Worker {
+  constructor(name, salary, position) {
+    super(name, salary);
+    this.position = position;
+  }
 
-console.log(notes);
+  getPosition() {
+    return `${this.name} works as ${this.position}`;
+  }
+}
 
-notes.addNote({
-  text: "today",
-  priority: Notes.priority.low,
-});
-notes.addNote({
-  text: "tomorrow",
-  priority: Notes.priority.middle,
-});
-notes.addNote({
-  text: "next day",
-  priority: Notes.priority.high,
-});
+const workerPosition1 = new WorkerPosition("Neo", 10000, "The one");
 
-console.table(notes.getNotes());
+console.log(workerPosition1.getPosition());
+console.log(workerPosition1.getSalary());
 
-notes.removeNote("today");
+// !=====================================================
 
-console.table(notes.getNotes());
+// Створи клас Contact для створення контакта з полями name, email і phone.
+// Потім створи клас ContactBook, який буде зберігати список контактів
+// і надавати методи для додавання, видалення та пошуку контактів.
 
-notes.updatePriority("tomorrow", Notes.priority.low);
+class Contact {
+  constructor(name, email, phone) {
+    this.name = name;
+    this.email = email;
+    this.phone = phone;
+  }
+}
 
-console.table(notes.getNotes());
+class ContactBook {
+  constructor() {
+    this.contacts = [];
+  }
+
+  addContact(contact) {
+    const inList = this.contacts.some(
+      (item) => item.name === contact.name || item.phone === contact.phone
+    );
+    if (inList) {
+      console.log("This contact already exist!");
+      return;
+    }
+    this.contacts.push(contact);
+  }
+
+  removeContact(name) {
+    this.contacts = this.contacts.filter((item) => item.name !== name);
+  }
+
+  findContact(name) {
+    return (
+      this.contacts.find((contact) => contact.name === name) ||
+      "Contact not found!!!"
+    );
+  }
+
+  getContacts() {
+    console.table(this.contacts);
+  }
+}
+
+const contactBook = new ContactBook();
+const trinity = new Contact("Trinty", "trinity@zion.com", "111 01 01 0101 01");
+const neo = new Contact("Neo", "neo@zion.com", "333 01 01 0101 01");
+const morfius = new Contact(
+  "Morfius",
+  "morfius@zion.com",
+  " 222 01 01 0101 01"
+);
+
+contactBook.addContact(trinity);
+contactBook.addContact(neo);
+contactBook.addContact(morfius);
+
+contactBook.getContacts();
+contactBook.addContact(morfius);
+contactBook.removeContact("Morfius");
+contactBook.getContacts();
+console.log(contactBook.findContact("Smith"));
