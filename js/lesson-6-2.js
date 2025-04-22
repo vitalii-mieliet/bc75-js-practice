@@ -70,3 +70,73 @@
 // client.email = "marsik@mail";
 
 // console.log(client.getClietnData.clientEmail);
+
+//------------------------------------------------------------
+// Напиши класс Notes який управляє коллекцієй нотаток у
+// властивості items.
+// Нотатка це  об'єкт з властивостями text, priority
+// Додай класу статичну властивість priority,
+// в якій буде зберігатись об'єкт з пріорітетами ("high", "middle", "low").
+// Додай методи getNotes(), addNote(note), removeNote(noteText)
+// updatePriority(noteText, newPriority)
+
+class Notes {
+  static priority = {
+    high: "high",
+    middle: "middle",
+    low: "low",
+  };
+  constructor() {
+    this.items = [];
+  }
+
+  getNotes() {
+    return this.items;
+  }
+
+  addNote(note) {
+    this.items.push(note);
+  }
+
+  removeNote(noteText) {
+    // this.items = this.items.filter((item) => item.text !== noteText);
+    const index = this.items.findIndex((item) => item.text === noteText);
+    if (index !== -1) {
+      this.items.splice(index, 1);
+    }
+  }
+
+  updatePriority(noteText, newPriority) {
+    const item = this.items.find((item) => item.text === noteText);
+    if (item) {
+      item.priority = newPriority;
+    }
+  }
+}
+
+const notes = new Notes();
+
+console.log(notes);
+
+notes.addNote({
+  text: "today",
+  priority: Notes.priority.low,
+});
+notes.addNote({
+  text: "tomorrow",
+  priority: Notes.priority.middle,
+});
+notes.addNote({
+  text: "next day",
+  priority: Notes.priority.high,
+});
+
+console.table(notes.getNotes());
+
+notes.removeNote("today");
+
+console.table(notes.getNotes());
+
+notes.updatePriority("tomorrow", Notes.priority.low);
+
+console.table(notes.getNotes());
