@@ -15,7 +15,20 @@
 //     const price = parent.lastElementChild.textContent;
 //     divEl.textContent = `Ви вибрали ${product} за ${price}`
 // }
-tippy('#myButton', {
-    content: 'My tooltip!',
-    theme: 'space'
-      });
+// tippy('#myButton', {
+//     content: 'My tooltip!',
+//     theme: 'space'
+//       });
+
+
+const myBtn = document.querySelector('#myButton');
+myBtn.addEventListener('click', () => {
+    Swal.fire({
+  title: 'Hello!',
+  text: 'Welcome to the club',
+  icon: 'success',
+  confirmButtonText: 'Go On'
+})
+})
+
+

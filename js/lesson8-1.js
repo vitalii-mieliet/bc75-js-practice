@@ -90,14 +90,14 @@ const details = document.querySelector(".details");
 
 list.insertAdjacentHTML("beforeend", createMarkup(tweets));
 
-tippy('.stats li', {
-  // content: 'Click on me!',
-  content(reference) {
-    return `Click on ${reference.firstElementChild.textContent}`
-  },
-    trigger: 'click',
-    theme: 'space'
-      });
+// tippy('.stats li', {
+//   // content: 'Click on me!',
+//   content(reference) {
+//     return `Click on ${reference.firstElementChild.textContent}`
+//   },
+//     trigger: 'click',
+//     theme: 'space'
+//       });
 
 
 list.addEventListener("click", getInfo);
@@ -121,7 +121,16 @@ function getInfo(e) {
         <p><strong>Hobbies:</strong> ${tweet.hobbies}</p>
         <p><strong>About:</strong> ${tweet.about}</p>
       `
-  details.innerHTML = markup;
+  // details.innerHTML = markup;
+  Swal.fire({
+  title: `${tweet.name}!`,
+  html: ` <p><strong>Likes:</strong> ${tweet.likes}</p>
+        <p><strong>Tags:</strong> ${tweet.tags.join(", ")}</p>
+        <p><strong>Hobbies:</strong> ${tweet.hobbies}</p>
+        <p><strong>About:</strong> ${tweet.about}</p>`,
+  confirmButtonText: 'Close'
+})
+
 }
 
 
