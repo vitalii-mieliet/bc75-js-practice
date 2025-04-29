@@ -119,6 +119,7 @@
 // За натисканням на кнопку "Вивести результат" виводиться сума значення, а також статистика з
 // інформацією про те, яка кнопка була натиснута скільки разів.
 let sum = 0;
+let stat = {};
 const calcBtn = document.querySelector(".statList");
 const result = document.querySelector("#resultSection");
 const resultBtn = document.querySelector("#resultButton");
@@ -132,14 +133,27 @@ function sumResult(event) {
 
   if (event.target.nodeName !== "BUTTON")
     return;
-  console.log(event.target)
+  // console.log(event.target)
   const number = event.target.dataset.number;
+  const key = event.target.textContent;
+  if (stat[key]) {
+    stat[key] += 1; 
+  } else {
+    stat[key] = 1;
+    }
   sum += +number;
-  console.log(sum);
+  // console.log(stat);
 }
 
 function showResult() {
-  result.textContent = `Загальна кількість - ${sum}`
+  let markup = `Загальна кількість - ${sum} <br>`
+  const statArray = Object.entries(stat);
+  for (const [key, value] of statArray) {
+   
+    markup += `${key} була натиснута ${value} разів. <br>`
+  }
+  result.innerHTML = markup;
+  stat = {};
   sum = 0;
 }
- 
+
