@@ -208,3 +208,8 @@ button:hover {
   font-weight: bold;
   text-align: center;
 }
+.tippy-box[data-theme~='space'] {
+  background-color: teal;
+  color: yellow;
+  font-weight: 500;
+}
